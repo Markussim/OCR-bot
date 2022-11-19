@@ -54,8 +54,8 @@ wss.on("message", async (data) => {
 
   if (payload.op === 0 && payload.t === "MESSAGE_CREATE") {
     try {
-      await axios.get("http://localhost:3000", {
-        params: {
+      await axios.post("http://localhost:3000", {
+        body: {
           message: payload,
         },
       });
